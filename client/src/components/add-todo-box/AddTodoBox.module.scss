@@ -1,0 +1,79 @@
+@import url('../../theme.scss');
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // gray shadow
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-family: 'Kanit';
+
+  .modal {
+    background: var(--page-bg);
+    border-radius: 10px;
+    width: 380px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: popIn 0.2s ease-in-out;
+    border: 1px solid white;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+
+    .input {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+      color: var(--text-color);
+      margin-bottom: 25px;
+      background: transparent;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      .cancel {
+        background: transparent;
+        border: 1px solid #6C63FF;
+        color: #6C63FF;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .apply {
+        background: #6C63FF;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
